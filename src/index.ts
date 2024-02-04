@@ -1,1 +1,1 @@
-import "./4-low-coupling/with/index.ts";
+import "./4-low-coupling-polymorphism-indirection/with/index.ts";
