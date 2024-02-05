@@ -1,8 +1,8 @@
+import IProduct from "./IProduct";
 import OrderItem from "./OrderItem";
-import Pizza from "./Pizza";
 
 interface LineOrder {
-  pizza: Pizza;
+  product: IProduct;
   quantity: number;
   unitPrice: number;
 }
@@ -10,7 +10,7 @@ interface LineOrder {
 export default class Order {
   readonly date: Date;
   readonly amount: number;
-  readonly items: Array<OrderItem> = [];
+  protected items: Array<OrderItem> = [];
 
   constructor(...linesOrder: Array<LineOrder>) {
     this.date = new Date();
@@ -19,7 +19,11 @@ export default class Order {
     //car seul Order manipule des objets de type OrderItem
     this.items = linesOrder.map(
       (lineOrder) =>
-        new OrderItem(lineOrder.pizza, lineOrder.quantity, lineOrder.unitPrice)
+        new OrderItem(
+          lineOrder.product,
+          lineOrder.quantity,
+          lineOrder.unitPrice
+        )
     );
 
     this.amount = this.calculateAmount();

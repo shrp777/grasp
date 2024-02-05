@@ -1,13 +1,13 @@
-import Pizza from "./Pizza";
+import IProduct from "./IProduct";
 
 export default class OrderItem {
-  readonly pizza: Pizza;
+  readonly product: IProduct;
   readonly quantity: number;
   readonly unitPrice: number;
   readonly amount: number;
 
-  constructor(pizza: Pizza, quantity: number, unitPrice: number) {
-    this.pizza = pizza;
+  constructor(product: IProduct, quantity: number, unitPrice: number) {
+    this.product = product;
     this.quantity = quantity;
     this.unitPrice = unitPrice;
     this.amount = this.calculateAmount();

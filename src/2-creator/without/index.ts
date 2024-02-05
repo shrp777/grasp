@@ -17,9 +17,3 @@ const order = new Order([
 console.assert(order.amount === 27); //true
 
 console.log(order.amount); //27
-
-/*
-Erreurs : 
-- Non applicaton du concept Creator
-- index.ts ne devrait pas accéder à la création d'OrderItem, car ce sont des objets uniquement manipulés par Order. Ils devraient donc être créés par Order.
-*/

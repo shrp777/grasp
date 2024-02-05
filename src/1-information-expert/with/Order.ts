@@ -13,6 +13,7 @@ export default class Order {
 
   //application du principe Information Expert
   calculateAmount(): number {
-    return this.items.reduce((acc, item) => acc + item.amount, 0);
+    //return this.items.reduce((acc, item) => acc + item.amount, 0);
+    return this.items.reduce((acc, item) => acc + item.calculateAmount(), 0);
   }
 }

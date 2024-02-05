@@ -2,15 +2,21 @@ import OrderItem from "./OrderItem";
 
 export default class Order {
   readonly date: Date;
-  readonly items: Array<OrderItem> = [];
+  readonly orderItems: Array<OrderItem> = [];
+  readonly amount: number;
 
-  constructor(items: Array<OrderItem>) {
+  constructor(orderItems: Array<OrderItem>) {
     this.date = new Date();
-    this.items = items;
+    this.orderItems = orderItems;
+    this.amount = this.calculateAmount();
+  }
+
+  calculateAmount(): number {
+    //return this.items.reduce((acc, item) => acc + item.amount, 0);
+    //il est préférable de laisser à OrderItem la responsabilité de calculer le montant plutôt que d'interférer directement
+    return this.orderItems.reduce(
+      (acc, item) => acc + item.calculateAmount(),
+      0
+    );
   }
 }
-
-/*
-Erreurs : 
-- classe sans méthode
-*/

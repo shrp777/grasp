@@ -1,7 +1,5 @@
 import Order from "./Order";
 import { v4 as uuid } from "uuid";
-import ApplePay from "./payment-methods/ApplePay";
-import BankCard from "./payment-methods/BankCard";
 import IPaymentMethod from "./payment-methods/IPaymentMethod";
 
 export enum PaymentMethod {

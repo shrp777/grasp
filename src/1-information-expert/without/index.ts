@@ -14,7 +14,7 @@ const order = new Order([
   new OrderItem(quattroStagioni, 1, quattroStagioni.price)
 ]);
 
-const amount = order.items.reduce(
+const amount = order.orderItems.reduce(
   (acc, orderItem) => acc + orderItem.unitPrice * orderItem.quantity,
   0
 );

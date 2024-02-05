@@ -9,19 +9,11 @@ export default class OrderItem {
   constructor(pizza: Pizza, quantity: number, unitPrice: number) {
     this.pizza = pizza;
     this.quantity = quantity;
-
-    this.unitPrice = unitPrice; //mieux
-    //Est-il préférable de faire référence à l'attribut price de Pizza
-    //ou récupérer la valeur en argument de constructeur ?
-
-    this.unitPrice = pizza.price;
-    //danger -> le prix peut évoluer après la commande
-    //il est préférable de récupérer un tarif déterminé à l'instant T
-    //plutôt que de faire de référence dynamiquement au tarif
-
+    this.unitPrice = unitPrice;
     this.amount = this.calculateAmount();
   }
 
+  //application du principe Information Expert
   calculateAmount(): number {
     return this.unitPrice * this.quantity;
   }
