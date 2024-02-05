@@ -1,4 +1,4 @@
-# GRASP
+# GRASP (Craig Larman)
 
 ## Principes
 
